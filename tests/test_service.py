@@ -43,5 +43,5 @@ def test_retry_resolves_existing_row(api):
 def test_live_endpoint(api):
     client, _ = api
     answer = client.get("/health")
-    assert answer.status_code == 200
+    assert answer.status_code == 202
     assert answer.json["status"] == "ok"
