@@ -1,0 +1,32 @@
+name: Preserve checked release archives
+on:
+  push:
+    branches: [delivery/publish-archives]
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        include:
+          - { tag: v1.1.0, run: 45611217021 }
+          - { tag: v2.1.0, run: 45611282064 }
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: ${{ matrix.tag }}
+      RUN: ${{ matrix.run }}
+    steps:
+      - name: Verify and retain the original archive
+        run: |
+          test "$(gh run view "$RUN" --json headBranch,conclusion --jq '.headBranch + ":" + .conclusion')" = "$TAG:success"
+          gh run download "$RUN" -n "image-$TAG" -D archive
+          (cd archive && sha256sum -c image.sha256)
+          gh release create "$TAG" archive/image.tar.gz archive/image.sha256 archive/image-id.txt archive/release.txt \
+            --verify-tag --title "Submission journal $TAG" \
+            --notes "Verified CI artifact from https://github.com/$GH_REPO/actions/runs/$RUN."
