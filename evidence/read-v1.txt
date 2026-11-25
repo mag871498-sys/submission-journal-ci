@@ -1,0 +1,10 @@
+maksymosadchyi ~ % curl -fsSi --max-time 4 http://127.0.0.1:8281/submissions/270
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 25 Nov 2026 12:12:56 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 75
+X-Request-Id: b030785e6e054638bd5620166e25eacb
+
+{"group_code":"SE-17","id":270,"submission_key":"journal-2511-canary-070"}

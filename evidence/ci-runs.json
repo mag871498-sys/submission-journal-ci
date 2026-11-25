@@ -1,0 +1,39 @@
+{
+  "v1": {
+    "url": "https://github.com/mag871498-sys/submission-journal-ci/actions/runs/45611217021",
+    "conclusion": "success",
+    "headBranch": "v1.1.0",
+    "headSha": "ed8c77c41fed82148a6017cafede9019167b8aba",
+    "steps": {
+      "Validate responses and data": "success",
+      "Build release image": "success",
+      "Upload original release archive": "success"
+    },
+    "image_id": "sha256:2eb14bc4fb59692c9bd9f6492f44e2abfb02305eebcc6c009077d4d9a3efa28c",
+    "archive_sha256": "935f3c48dfc994173dd26cd25b5d60ad3ff15d100c8c53c4773415757d0aa8b6"
+  },
+  "v2": {
+    "url": "https://github.com/mag871498-sys/submission-journal-ci/actions/runs/45611282064",
+    "conclusion": "success",
+    "headBranch": "v2.1.0",
+    "headSha": "eac1d245571a750a1a4de17cc8ce53e96c4b6dbe",
+    "steps": {
+      "Validate responses and data": "success",
+      "Build release image": "success",
+      "Upload original release archive": "success"
+    },
+    "image_id": "sha256:05b3c8ef8deb5fdd5665ac189bca8fe87df5bbd2922ab68331f2ab8865d7631a",
+    "archive_sha256": "4298fb6385f8286472b1b1dbc403a18663913dc465619de0b56b8f2098c6e9f5"
+  },
+  "failure": {
+    "url": "https://github.com/mag871498-sys/submission-journal-ci/actions/runs/45611287294",
+    "conclusion": "failure",
+    "headBranch": "exercise/failed-api-check",
+    "headSha": "949cb9b3e6ab94ac9d7077ca606fc229512b69f1",
+    "steps": {
+      "Validate responses and data": "failure",
+      "Build release image": "skipped",
+      "Upload original release archive": "skipped"
+    }
+  }
+}

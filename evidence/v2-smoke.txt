@@ -1,0 +1,10 @@
+maksymosadchyi ~ % curl -fsSi --max-time 4 -H 'Content-Type: application/json' -d '{"group_code":"SE-17","submission_key":"stage-v2-2511"}' http://127.0.0.1:8291/submissions
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 25 Nov 2026 12:12:12 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 39
+X-Request-Id: 0bd9c06176054f5fb4e702aae719050e
+
+{"confirmation":"2928c35a9261","id":2}

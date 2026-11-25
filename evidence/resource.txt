@@ -1,0 +1,3 @@
+NAME                CPU %     MEM USAGE / LIMIT
+journal-work-v1-1   10.59%    38.41MiB / 3.827GiB
+journal-work-v2-1   7.24%     38.31MiB / 3.827GiB
