@@ -30,10 +30,10 @@ jobs:
           mkdir -p diagnostics
           python lab.py test --timeout 45 --junit diagnostics/pytest.xml 2>&1 | tee diagnostics/pytest.log
       - name: Build release image
-        if: github.ref_type == 'tag'
         run: |
           mkdir -p archive cached
           tag="$GITHUB_REF_NAME"
+          if [[ "$GITHUB_REF_TYPE" != tag ]]; then tag=branch-check; fi
           docker build --label "org.opencontainers.image.revision=$GITHUB_SHA" -t "journal-lab:$tag" .
           docker image inspect --format '{{.Id}}' "journal-lab:$tag" > archive/image-id.txt
           printf '%s\n' "$tag" > archive/release.txt
